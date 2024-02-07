@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { View, text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 
 const AddPost = () => {
     const [usertitle, setUsertitle] = useState('');
-    const [userbody, setUsebody] = useState('');
+    const [userbody, setUserbody] = useState('');
 
     const handleAddPost = async () => {
         try {
@@ -24,14 +24,14 @@ const AddPost = () => {
             <Text style={styles.title}>Add news</Text>
             <TextInput
                 style={styles.input}
-                placeholders="Input title"
-                value={userName}
+                placeholders="Masukkan title"
+                value={usertitle}
                 onChangeText={text => setUsertitle(text)}
             />
             <TextInput
                 style={styles.input}
                 placeholders="Masukkan body"
-                value={userEmail}
+                value={userbody}
                 onChangeText={text => setUserbody(text)}
             />
             <TouchableOpacity style={styles.addButton} onPress={handleAddPost}>
@@ -40,5 +40,29 @@ const AddPost = () => {
         </View>
     )
 };
+
+const styles= StyleSheet.create ({
+    container:{
+        flex : 1,
+        padding : 16,
+    },
+    title:{
+        fontSize: 20,
+        fontWeight:'bold',
+        marginBottom : 16,
+    },
+    usertitle:{
+        marginBottom:16,
+        borderWidth: 1,
+        borderColor:'#ddd',
+        padding : 10,
+        borderRadius:8,
+    },
+    userbody:{
+        fontSize:16,
+        fontWeight:'bold',
+        marginBottom:8,
+    },
+})
 
 export default AddPost;
