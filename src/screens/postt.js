@@ -41,7 +41,7 @@ const AddPost = () => {
     )
 };
 
-const styles= StyleSheet.create ({
+const style= StyleSheet.create ({
     container:{
         flex : 1,
         padding : 16,
@@ -51,18 +51,17 @@ const styles= StyleSheet.create ({
         fontWeight:'bold',
         marginBottom : 16,
     },
-    usertitle:{
+    userItem:{
         marginBottom:16,
         borderWidth: 1,
         borderColor:'#ddd',
         padding : 10,
         borderRadius:8,
     },
-    userbody:{
+    userName:{
         fontSize:16,
         fontWeight:'bold',
         marginBottom:8,
     },
 })
-
 export default AddPost;

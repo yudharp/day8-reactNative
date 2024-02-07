@@ -18,8 +18,6 @@ const UserList = () => {
     fetchData();
   }, []);
 
-  
-
   return (
     <View style={style.container}>
       <Text style={style.title}>List of title</Text>
