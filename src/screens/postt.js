@@ -3,14 +3,14 @@ import { View, text, TextInput, TouchableOpacity, StyleSheet } from 'react-nativ
 import axios from 'axios';
 
 const AddUser = () => {
-    const [userName, setUserName] = useState('');
-    const [userEmail, setUserEmail] = useState('');
+    const [usertitle, setUsertitle] = useState('');
+    const [userbody, setUserbody] = useState('');
 
     const handleAddUser = async () => {
         try {
             const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
-            name: userName,
-            email: userEmail,
+            title: usertitle,
+            body: userbody,
         });
 
             console.log('User added:', response.data);
@@ -25,14 +25,14 @@ const AddUser = () => {
             <TextInput
                 style={styles.input}
                 placeholders="Masukkan nama"
-                value={userName}
-                onChangeText={text => setUserName(text)}
+                value={usertitle}
+                onChangeText={text => setUsertitle(text)}
             />
             <TextInput
                 style={styles.input}
                 placeholders="Masukkan email"
-                value={userEmail}
-                onChangeText={text => setUserEmail(text)}
+                value={userbody}
+                onChangeText={text => setUserbody(text)}
             />
             <TouchableOpacity style={styles.addButton} onPress={handleAddUser}>
                 <Text style={styles.buttonText}>Add user</Text>
