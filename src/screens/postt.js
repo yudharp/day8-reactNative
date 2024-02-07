@@ -2,41 +2,43 @@ import React, { useState } from "react";
 import { View, text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const AddUser = () => {
-    const [userName, setUserName] = useState('');
-    const [userEmail, setUserEmail] = useState('');
+const AddPost = () => {
+    const [usertitle, setUsertitle] = useState('');
+    const [userbody, setUsebody] = useState('');
 
-    const handleAddUser = async () => {
+    const handleAddPost = async () => {
         try {
             const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
-            name: userName,
-            email: userEmail,
+            title: usertitle,
+            body: userbody,
         });
 
-            console.log('User added:', response.data);
+            console.log('News added:', response.data);
         } catch (error) {
-            console.error('Error adding user', error);
+            console.error('Error adding news', error);
         }
     };
 
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Add user</Text>
+            <Text style={styles.title}>Add news</Text>
             <TextInput
                 style={styles.input}
-                placeholders="Masukkan nama"
+                placeholders="Input title"
                 value={userName}
-                onChangeText={text => setUserName(text)}
+                onChangeText={text => setUsertitle(text)}
             />
             <TextInput
                 style={styles.input}
-                placeholders="Masukkan email"
+                placeholders="Masukkan body"
                 value={userEmail}
-                onChangeText={text => setUserEmail(text)}
+                onChangeText={text => setUserbody(text)}
             />
-            <TouchableOpacity style={styles.addButton} onPress={handleAddUser}>
-                <Text style={styles.buttonText}>Add user</Text>
+            <TouchableOpacity style={styles.addButton} onPress={handleAddPost}>
+                <Text style={styles.buttonText}>Add news</Text>
             </TouchableOpacity>
         </View>
     )
 };
+
+export default AddPost;
