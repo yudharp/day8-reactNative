@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const UserList = () => {
-  //const [users, setUsers] = useState([]);
+const GetList = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -17,6 +16,7 @@ const UserList = () => {
       };
     fetchData();
   }, []);
+
 
   return (
     <View style={style.container}>
@@ -58,4 +58,4 @@ const style= StyleSheet.create ({
         marginBottom:8,
     },
 })
-export default UserList;
+export default GetList;
