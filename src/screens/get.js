@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 import axios from 'axios';
 
-const UserList = () => {
+const GetList = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -58,4 +58,4 @@ const style= StyleSheet.create ({
         marginBottom:8,
     },
 })
-export default UserList;
+export default GetList;
