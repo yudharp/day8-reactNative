@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "day8-reactNative",
+    "slug": "day8-reactNative",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
